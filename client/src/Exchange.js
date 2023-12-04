@@ -12,7 +12,7 @@ const Exchange = () => {
 
   useEffect(() => {
     // Fetch currencies from the server
-    axios.get('http://localhost:5000/api/currencies')
+    axios.get('https://server-85io.onrender.com/api/currencies')
       .then(response => {
         const formattedCurrencies = response.data.map(currency => ({ value: currency.name, label: currency.name }));
         setCurrencies(formattedCurrencies);
@@ -35,7 +35,7 @@ const Exchange = () => {
   const handleExchange = () => {
     if (selectedFromCurrency && selectedToCurrency && amount) {
       // Send a POST request to the server for currency conversion
-      axios.post('http://localhost:5000/api/convert', {
+      axios.post('https://server-85io.onrender.com/api/convert', {
         fromCurrency: selectedFromCurrency.label,
         toCurrency: selectedToCurrency.label,
         amount: amount

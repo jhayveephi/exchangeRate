@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:server": "cd server && npm start",
     "start:client": "cd client && npm start",
-    "start": "npm-run-all -p start:server start:client"
+    "start": "npm-run-all -p start:server start:client",
+    "build": "react-scripts build"
   },
   "keywords": [],
   "author": "",

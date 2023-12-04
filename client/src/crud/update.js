@@ -14,7 +14,7 @@ const Update = () => {
   useEffect(() => {
     const fetchCurrencyData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/currencies/name/${name}`);
+        const response = await axios.get(`https://server-85io.onrender.com/api/currencies/name/${name}`);
         setCurrency(response.data);
       } catch (error) {
         console.error('Error fetching currency data:', error);
@@ -29,7 +29,7 @@ const Update = () => {
     const updatedCurrency = { name: currency.name, rate: currency.rate };
 
     try {
-      const res = await axios.put(`http://localhost:5000/api/currencies/updateByName/${name}`, updatedCurrency);
+      const res = await axios.put(`https://server-85io.onrender.com/api/currencies/updateByName/${name}`, updatedCurrency);
       setSuccessMessage(`Currency "${name}" updated successfully!`);
       setErrorMessage('');
       setshowSuccessDialog(true);
